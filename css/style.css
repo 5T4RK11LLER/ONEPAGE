@@ -1,0 +1,425 @@
+:root {
+  /* Fondo y Contraste Principal */
+  --primary-dark: #1A202C;    /* Azul Medianoche Profundo (Para Hero y Sidebar) */
+  --deep-black: #000108;      /* Negro Base (Para fondos de sección oscuros) */
+  
+  /* Color de Acento (IA y Acción) */
+  --accent-green: #48BB78;    /* Verde Esmeralda (Para botones, nodos y logos) */
+  --accent-hover: #38A169;    /* Verde Bosque (Para efectos hover en botones) */
+  
+  /* Colores de Superficie y Texto */
+  --bg-light: #F7FAFC;        /* Blanco Humo (Para fondos de tarjetas y cuerpo) */
+  --text-main: #FFFFFF;       /* Blanco Puro (Texto sobre fondos oscuros) */
+  --text-body: #2D3748;       /* Gris Carbono (Texto principal sobre fondos claros) */
+  --text-muted: #A0AEC0;      /* Gris Acero (Para textos secundarios y descripciones) */
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h2, h3 {
+    letter-spacing: -0.5px;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar div {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1); 
+}
+
+.nav-link {
+    color: #2D3748;
+    margin-right: 20px;
+    font-size: 23px;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #48BB78;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #48BB78;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.buttons {
+    background-color: #48BB78;
+    color: #F7FAFC;
+    padding: 10px 20px;
+    font-size: 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.navbar h1{
+    font-family: "Stack Sans Text", sans-serif;     
+    color: #2D3748;
+    font-size: 40px;
+}
+
+.navbar h1 span{
+    color: #A0AEC0;
+    font-family: "Stack Sans Text", sans-serif;
+    font-size: 40px;
+}
+
+.sections {
+    background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+    color: #FFFFFF;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.sections h2 {
+    font-size: 60px;
+    margin-top: 60px;
+}
+
+.sections h3 {
+    font-size: 25px;
+    margin-top: 40px;
+    font-family: "Stack Sans Text", sans-serif;
+}
+
+#laptop_img {
+    display: block;
+    align-self: center;
+    width: 50%;
+    max-width: 1050px;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+}
+
+.sections button{
+    font-size: 30px;
+    align-self: center;
+    padding: 15px 25px;
+    margin-bottom: 40px;
+}
+
+.publish_1, .publish_2, .publish_3, .publish_4{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    background-color: #F7FAFC;
+    text-align: center;
+    place-items: center;
+    color:#38A169;
+    font-size: 150px;
+    transition: transform 0.10s ease, color 0.6s ease;
+    cursor: default;    
+}
+
+.publish_1 i:hover, .publish_2 i:hover, 
+.publish_3 i:hover, .publish_4 i:hover {
+    transform: translateY(-10px) scale(1.05);
+    color: #48BB78;
+}
+
+.publish_title{
+    grid-column: 1/4;
+    font-size: 50px;
+    color: #2D3748;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.publish_paragraph {
+    font-size: 30px;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    color: #2D3748;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.publish_2, .publish_3 {
+    background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+}
+
+.publish_2 p, .publish_3 p {
+    color: #FFFFFF;
+}
+
+.publish_2 h2, .publish_3 h2 {
+    color: #FFFFFF;
+}
+
+
+#section_pay {
+    background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1px;
+    text-align: center;
+    place-items: center;
+}
+
+#section_pay h2 {
+    grid-column: 1/4;
+    padding-bottom: 20px;
+    font-size: 45px;
+    color: #FFFFFF;
+}
+
+.price_card {
+    background-color: #FFFFFF;
+    align-self: center;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: border 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.price_card:hover {
+    transform: scale(1.05);
+    border: 2px solid #48BB78;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.price_card h3{
+    font-size: 40px;
+}
+
+.price_card h4 {
+    font-size: 40px;
+}
+
+.price_card h4 span{
+    color: #A0AEC0;
+}
+
+.contact_section {
+    background:  #F7FAFC;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact_title {
+    font-size: 45px;
+    color:#2D3748;
+    margin-bottom: 10px;
+}
+
+.contact_subtitle {
+    color: #A0AEC0;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.contact_form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+
+.form_group label {
+    color: #2D3748;
+    font-size: 16px;
+}
+
+.form_group label i {
+    color: #48BB78;
+    margin-right: 6px;
+}
+
+.form_group input,
+.form_group textarea {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #2D3748;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+    border: 1px solid #48BB78;
+    box-shadow: 0 0 10px rgba(72, 187, 120, 0.2);
+}
+
+.form_group input::placeholder,
+.form_group textarea::placeholder {
+    color: #A0AEC0;
+}
+
+.form_group textarea {
+    resize: vertical;
+}
+
+.contact_btn {
+    align-self: center;
+    font-size: 20px;
+    padding: 14px 35px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer {
+    background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+    color: #FFFFFF;
+    border-top: 1px solid rgba(72, 187, 120, 0.3);
+}
+
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 60px;
+    gap: 40px;
+}
+
+.footer_brand {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+}
+
+.footer_brand h3 {
+    font-size: 30px;
+}
+
+.footer_brand h3 span {
+    color: #A0AEC0;
+}
+
+.footer_brand p {
+    color: #A0AEC0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.footer_social {
+    display: flex;
+    gap: 15px;
+}
+
+.icon_footer {
+    font-size: 22px;
+    color: #A0AEC0;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.icon_footer:hover {
+    color: #48BB78;
+    transform: translateY(-4px);
+}
+
+.footer_links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer_links h4 {
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(72, 187, 120, 0.4);
+    padding-bottom: 8px;
+}
+
+.footer_links a {
+    color: #A0AEC0;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer_links a:hover {
+    color: #48BB78;
+    padding-left: 6px;
+}
+
+.footer_bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 20px;
+    color: #A0AEC0;
+    font-size: 14px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    animation:  fadeInUp 0.8s ease forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.3s; }
+.fade-in:nth-child(3) { animation-delay: 0.5s; }
+.fade-in:nth-child(4) { animation-delay: 0.7s; }
+.fade-in:nth-child(5) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
